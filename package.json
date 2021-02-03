@@ -1,6 +1,6 @@
 {
   "name": "auto-deploy-cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "auto deploy cli",
   "main": "./bin/index.js",
   "author": "untilthecore",
