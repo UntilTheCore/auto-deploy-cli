@@ -1,17 +1,16 @@
 {
-  "name": "auto_deploy",
+  "name": "auto-deploy-cli",
   "version": "0.0.1",
-  "description": "auto deploy",
+  "description": "auto deploy cli",
   "main": "./bin/index.js",
   "author": "untilthecore",
   "license": "MIT",
-  "private": "true",
   "dependencies": {
-    "archiver": "^3.1.1",
-    "chalk": "^3.0.0",
+    "archiver": "^5.2.0",
+    "chalk": "^4.1.0",
     "commander": "^4.1.0",
     "inquirer": "^7.0.3",
-    "node-ssh": "^7.0.0",
+    "node-ssh": "^11.1.1",
     "ora": "^4.0.3",
     "semver": "^7.1.1"
   },
