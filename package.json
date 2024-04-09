@@ -1,6 +1,6 @@
 {
   "name": "auto-deploy-cli",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "auto deploy cli",
   "main": "./bin/index.cjs",
   "author": "untilthecore",
