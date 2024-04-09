@@ -2,7 +2,7 @@
   "name": "auto-deploy-cli",
   "version": "0.0.4",
   "description": "auto deploy cli",
-  "main": "./bin/index.js",
+  "main": "./bin/index.cjs",
   "author": "untilthecore",
   "license": "MIT",
   "dependencies": {
@@ -16,9 +16,9 @@
     "semver": "^7.1.1"
   },
   "engines": {
-    "node": ">=9.0.0"
+    "node": "^16.14.0 || >=18.0.0"
   },
   "bin": {
-    "deploy": "./bin/index.js"
+    "deploy": "./bin/index.cjs"
   }
 }

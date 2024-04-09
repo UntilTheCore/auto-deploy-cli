@@ -10,14 +10,14 @@ const packageJson = require( '../package.json' )
 const deployPath = path.join( process.cwd(), './deploy' )
 // 部署的配置文件
 const deployConfigPath = `${deployPath}/deploy.config.js`
-const { checkNodeVersion, checkDeployConfig, underlineLog } = require( '../lib/schema' )
+const { checkNodeVersion, checkDeployConfig, underlineLog } = require( '../lib/schema.cjs' )
 
 const version = packageJson.version
 const requiredNodeVersion = packageJson.engines.node
 
 const versionOptions = [ '-V', '--version' ]
 
-checkNodeVersion( requiredNodeVersion, 'auto-deploy' )
+checkNodeVersion( requiredNodeVersion, 'auto-deploy-cli' )
 
 const program = require( 'commander' )
 
@@ -26,13 +26,12 @@ program
 .command( 'init' )
 .description( '初始化部署相关配置' )
 .action( () => {
-  require( '../lib/init' )()
+  require('../lib/init')()
 } )
 
 const agrs = process.argv.slice( 2 )
 
 const firstArg = agrs[0]
-
 // 非version选项且有配置文件时，进入部署流程
 if ( !versionOptions.includes( firstArg ) && fs.existsSync( deployConfigPath ) ) {
   deploy()
@@ -45,6 +44,7 @@ if ( !firstArg ) {
 
 // 部署流程
 function deploy() {
+  debugger
   // 检测部署配置是否合理
   const deployConfigs = checkDeployConfig( deployConfigPath )
   if ( !deployConfigs ) {
@@ -70,7 +70,7 @@ function deploy() {
           process.exit( 1 )
         }
         if ( sure ) {
-          const deploy = require( '../lib/engine' )
+          const deploy = require( '../lib/engine.cjs' )
           deploy( config )
         }
       } )
